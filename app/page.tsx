@@ -1,16 +1,13 @@
 import React from 'react';
 
-import Navbar from './navbar';
-import InstagramFeed from './instagramfeed';
+import Navbar from './NavBar';
+import InstagramFeed from './InstagramFeed';
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <InstagramFeed />
-      <h1 className="text-3xl">
-        HOME
-      </h1>
     </>
   );
 }
