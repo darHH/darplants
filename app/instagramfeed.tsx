@@ -54,7 +54,7 @@ const InstagramFeed: React.FC = () => {
                 <img
                   src={post.media_url}
                   alt={post.caption || 'Instagram Post'}
-                  className={`w-full h-auto p-4 ${isSold ? 'opacity-50' : ''}`}
+                  className={`w-full h-auto ${isSold ? 'opacity-50' : ''}`}
                 />
               </a>
               <p className="p-2 text-gray-700">{lastLine}</p>
