@@ -1,3 +1,4 @@
+// Configuration for TypeScript, it defines what should be type checked, ignored or the rules to follow
 {
   "compilerOptions": {
     "target": "ES2017",

@@ -1,3 +1,4 @@
+// This file is used to configure Tailwind CSS
 import type { Config } from "tailwindcss";
 
 export default {

@@ -1,3 +1,4 @@
+// To configure nextJS features
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
