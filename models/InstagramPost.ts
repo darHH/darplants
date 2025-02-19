@@ -5,18 +5,19 @@ export class InstagramPost {
     mediaUrl: string;
     caption: string;
     permalink: string;
-    name: string;
+    fullName: string;
+    plantName: string;
     price: number | null;
     igDescription: string;
 
-  
     constructor(id: string, mediaUrl: string, caption: string, permalink: string) {
       this.id = id; // Unique ID of the post
       this.mediaUrl = mediaUrl; // URL of the image
       this.caption = caption; // Whole caption of the post
       this.permalink = permalink; // URL of the post on Instagram
 
-      this.name = this.getName(); // Name of the plant
+      this.fullName = this.getFullName(); // Name of the plant and planter
+      this.plantName = this.fullName.split('in')[0]; // Name of the plant
       this.price = this.getPrice(); // Price of the plant in SGD
       this.igDescription = this.getIgDescription(); // IG's description of the plant
     }
@@ -26,7 +27,7 @@ export class InstagramPost {
       return lines.length > 0 ? lines[lines.length - 1] : '';
     }
 
-    getName(): string {
+    getFullName(): string {
       const lastLine = this.getLastLine();
       const parts = lastLine.split(' ');
       parts.pop();

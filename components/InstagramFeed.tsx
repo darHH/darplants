@@ -12,7 +12,7 @@ const InstagramFeed: React.FC = () => {
     const loadPosts = async () => {
       try {
         const fetchedPosts = await instagramService.fetchPosts();
-        console.log(fetchedPosts[1].igDescription);
+        console.log(fetchedPosts[1].plantName);
         console.table(fetchedPosts);
         setPosts(fetchedPosts);
       } catch (error) {

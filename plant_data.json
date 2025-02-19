@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Stephania Erecta",
+        "water_frequency": 1,
+        "water_requirement_description": "Water sparingly, letting the soil dry out—its caudex stores moisture.",
+        "sunlight_requirement_rating": 3,
+        "sunlight_requirement_description": "Loves bright, indirect light—keep near a window but avoid harsh sun."
+    },
+    {
+        "name": "Orange Succulent",
+        "water_frequency": 0.5,
+        "water_requirement_description": "Water only when the soil is bone dry—its plump leaves store moisture.",
+        "sunlight_requirement_rating": 5,
+        "sunlight_requirement_description": "Thrives in bright, direct light—keep it by a sunny window but watch for sunburn."
+    },
+    {
+        "name": "Sekka Hinoki Cypress Japanese Bonsai",
+        "water_frequency": 4,
+        "water_requirement_description": "Water deeply 4 times a week—bonsai soil dries out quickly and needs consistent moisture.",
+        "sunlight_requirement_rating": 4,
+        "sunlight_requirement_description": "Thrives in bright, filtered light—place near a sunny window with some morning sun exposure."
+    },
+    {
+        "name": "Japanese Maple Bonsai",
+        "water_frequency": 4,
+        "water_requirement_description": "Water deeply 4 times a week—bonsai soil dries out quickly and needs consistent moisture.",
+        "sunlight_requirement_rating": 4,
+        "sunlight_requirement_description": "Thrives in bright, filtered light—place near a sunny window with morning sun but avoid harsh afternoon heat."
+    },
+    {
+        "name": "Japanese Shimpaku Juniper Bonsai",
+        "water_frequency": 4,
+        "water_requirement_description": "Water deeply 4 times a week—juniper bonsai prefer consistently moist but well-draining soil.",
+        "sunlight_requirement_rating": 5,
+        "sunlight_requirement_description": "Thrives in bright, direct light—place near a sunny window or balcony for strong, healthy growth."
+    },
+    {
+        "name": "Senna Meridionalis",
+        "water_frequency": 2,
+        "water_requirement_description": "Water 2 times a week—since it's a desert plant, it stores moisture and thrives with less frequent watering.",
+        "sunlight_requirement_rating": 5,
+        "sunlight_requirement_description": "Thrives in bright, direct light—place in a sunny spot for optimal growth and flowering."
+    },
+    {
+        "name": "Stephania Suberosa",
+        "water_frequency": 1,
+        "water_requirement_description": "Water once a week—its caudex stores water, making it drought-tolerant.",
+        "sunlight_requirement_rating": 3,
+        "sunlight_requirement_description": "Thrives in bright, indirect light—keep near a window but away from intense sun to prevent stress."
+    },
+    {
+        "name": "Fire Fern",
+        "water_frequency": 3,
+        "water_requirement_description": "Water 3 times a week—this humidity loving plant prefers consistently moist soil but not soggy.",
+        "sunlight_requirement_rating": 3,
+        "sunlight_requirement_description": "Thrives in bright, indirect light—keep near a window with filtered sunlight for best growth."
+    },
+    {
+        "name": "Clover",
+        "water_frequency": 3,
+        "water_requirement_description": "Water 3 times a week, clover enjoys consistently moist soil but can tolerate short dry periods.",
+        "sunlight_requirement_rating": 4,
+        "sunlight_requirement_description": "Thrives in bright, filtered light—does well with some morning sun but prefers shade during the hottest part of the day."
+    }
+]
