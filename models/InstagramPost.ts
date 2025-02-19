@@ -6,6 +6,7 @@ export class InstagramPost {
     caption: string;
     permalink: string;
     name: string;
+    price: number | null;
 
   
     constructor(id: string, mediaUrl: string, caption: string, permalink: string) {
@@ -14,6 +15,7 @@ export class InstagramPost {
       this.caption = caption; // Whole caption of the post
       this.permalink = permalink; // URL of the post on Instagram
       this.name = this.getName(); // Name of the plant
+      this.price = this.getPrice(); // Price of the plant in SGD
     }
   
     getLastLine(): string {
@@ -26,6 +28,15 @@ export class InstagramPost {
       const parts = lastLine.split(' ');
       parts.pop();
       return parts.join(' ');
+    }
+
+    getPrice(): number | null {
+      const lastLine = this.getLastLine();
+      const isDigit = lastLine.match(/\d+/);
+      if (isDigit) {
+        return parseInt(isDigit[0], 10);
+      }
+      return null
     }
   
     isSold(): boolean {
