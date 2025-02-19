@@ -1,5 +1,4 @@
 // src/models/InstagramPost.ts
-// Plant contains name, price, description, image, waterrating, waterdescription, sunrating, sundescription, pruningdescription, availability
 export class InstagramPost {
     id: string;
     mediaUrl: string;
@@ -9,6 +8,10 @@ export class InstagramPost {
     plantName: string;
     price: number | null;
     igDescription: string;
+    waterFrequency: number = 0;
+    waterGuide: string = '';
+    sunRating: number = 0;
+    sunGuide: string = '';
 
     constructor(id: string, mediaUrl: string, caption: string, permalink: string) {
       this.id = id; // Unique ID of the post
@@ -17,9 +20,10 @@ export class InstagramPost {
       this.permalink = permalink; // URL of the post on Instagram
 
       this.fullName = this.getFullName(); // Name of the plant and planter
-      this.plantName = this.fullName.split('in')[0]; // Name of the plant
+      this.plantName = this.fullName.split(' in ')[0]; // Name of the plant
       this.price = this.getPrice(); // Price of the plant in SGD
       this.igDescription = this.getIgDescription(); // IG's description of the plant
+      this.getPlantData(); // Water Frequency, Water Guide, Sun Rating, Sun Guide
     }
   
     getLastLine(): string {
@@ -53,5 +57,30 @@ export class InstagramPost {
       return lastLine.split(' ').pop()?.toUpperCase() === 'SOLD';
     }
 
+    async getPlantData(): Promise<void> {
+      try {
+        // Fetch JSON from public folder
+        const response = await fetch("/plant_data.json");
+        if (!response.ok) throw new Error("Failed to load plant data.");
+    
+        const plantData = await response.json();
+    
+        // Find the plant
+        const plant = plantData.find((p: any) => p.name.toLowerCase() === this.plantName.toLowerCase().trimEnd());
+    
+        if (!plant) {
+          console.error(`Error: Plant "${this.plantName}" not found.`);
+          return;
+        }
+    
+        // Assign values to the instance
+        this.waterFrequency = plant.water_frequency;
+        this.waterGuide = plant.water_requirement_description;
+        this.sunRating = plant.sunlight_requirement_rating;
+        this.sunGuide = plant.sunlight_requirement_description;
+      } catch (error) {
+        console.error("Error fetching plant data:", error);
+      }
+    }
 
   }

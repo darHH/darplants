@@ -1,5 +1,12 @@
 [
     {
+        "name": "",
+        "water_frequency": 0,
+        "water_requirement_description": "",
+        "sunlight_requirement_rating": 0,
+        "sunlight_requirement_description": ""
+    },
+    {
         "name": "Stephania Erecta",
         "water_frequency": 1,
         "water_requirement_description": "Water sparingly, letting the soil dry out—its caudex stores moisture.",

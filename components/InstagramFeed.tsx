@@ -12,8 +12,7 @@ const InstagramFeed: React.FC = () => {
     const loadPosts = async () => {
       try {
         const fetchedPosts = await instagramService.fetchPosts();
-        console.log(fetchedPosts[1].plantName);
-        console.table(fetchedPosts);
+        console.log(fetchedPosts);       
         setPosts(fetchedPosts);
       } catch (error) {
         console.error('Error fetching posts:', error);
@@ -28,7 +27,7 @@ const InstagramFeed: React.FC = () => {
       {posts.length === 0 ? (
         <p className="text-center text-gray-500">No posts found.</p>
       ) : (
-        posts.slice(0, -1).map((post) => (
+        posts.map((post) => (
           <div key={post.id} className="border rounded-lg shadow-md overflow-hidden">
             <a
               href={post.permalink}
