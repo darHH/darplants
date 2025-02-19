@@ -7,6 +7,7 @@ export class InstagramPost {
     permalink: string;
     name: string;
     price: number | null;
+    igDescription: string;
 
   
     constructor(id: string, mediaUrl: string, caption: string, permalink: string) {
@@ -14,8 +15,10 @@ export class InstagramPost {
       this.mediaUrl = mediaUrl; // URL of the image
       this.caption = caption; // Whole caption of the post
       this.permalink = permalink; // URL of the post on Instagram
+
       this.name = this.getName(); // Name of the plant
       this.price = this.getPrice(); // Price of the plant in SGD
+      this.igDescription = this.getIgDescription(); // IG's description of the plant
     }
   
     getLastLine(): string {
@@ -38,7 +41,12 @@ export class InstagramPost {
       }
       return null
     }
-  
+
+    getIgDescription(): string {
+      const paragraphs = this.caption ? this.caption.split('\n\n') : [];
+      return paragraphs.length > 0 ? paragraphs[0] : '';
+    }
+
     isSold(): boolean {
       const lastLine = this.getLastLine();
       return lastLine.split(' ').pop()?.toUpperCase() === 'SOLD';
