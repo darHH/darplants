@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Navbar from '../components/NavBar';
 import InstagramFeed from '../components/InstagramFeed';
+import LandingPage from '../components/LandingPage';
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <LandingPage />
       <InstagramFeed />
     </>
   );

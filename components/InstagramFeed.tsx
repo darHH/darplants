@@ -3,10 +3,14 @@
 import React, { useEffect, useState } from 'react';
 import { InstagramPost } from '../models/InstagramPost';
 import { InstagramService } from '../models/InstagramService';
+import Modal from './Modal';
+import PlantModal from './PlantModal';
 
 const InstagramFeed: React.FC = () => {
   const [posts, setPosts] = useState<InstagramPost[]>([]);
   const instagramService = new InstagramService();
+  const [selectedPost, setSelectedPost] = useState<InstagramPost | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -22,15 +26,25 @@ const InstagramFeed: React.FC = () => {
     loadPosts();
   }, []);
 
+  const handleImageClick = (post: InstagramPost) => {
+    setSelectedPost(post);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedPost(null);
+  };
+
   return (
-    <div className="grid grid-cols-3 gap-4 p-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8 px-4 md:py-24 md:px-48">
       {posts.length === 0 ? (
         <p className="text-center text-gray-500">No posts found.</p>
       ) : (
         posts.map((post) => (
           <div key={post.id} className="border rounded-lg shadow-md overflow-hidden">
             <a
-              href={post.permalink}
+              onClick={() => handleImageClick(post)}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-105 transition-transform duration-300 block"
@@ -40,11 +54,16 @@ const InstagramFeed: React.FC = () => {
                 alt={post.caption || 'Instagram Post'}
                 className={`w-full h-auto ${post.isSold() ? 'opacity-50' : ''}`}
               />
+              {/* <b className="p-2 font-bold">
+                {post.plantName}
+              </b> */}
             </a>
-            <p className="p-2 text-gray-700">{post.getLastLine()}</p>
           </div>
         ))
       )}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {selectedPost && <PlantModal post={selectedPost} />}
+      </Modal>
     </div>
   );
 };
