@@ -7,15 +7,30 @@ interface PlantModalProps {
 
 const PlantModal: React.FC<PlantModalProps> = ({ post }) => {
     return (
-        <div className="bg-white p-1 rounded-lg shadow-lg z-10 h-auto overflow-hidden md:w-5/12">
-            <div className="">
+        <div className="bg-green-50 rounded-lg shadow-lg z-10 overflow-hidden w-1/4 h-2/3">
+            <div className="p-2 text-xs text-center">
                 <h1>{post.fullName}</h1>
             </div>
-            <div className="w-2/5 rounded-lg">
-                <img src ={post.mediaUrl} alt ={'A Plant'} className="rounded-lg h-auto" />
-            </div>
             <div className="">
-                <h1>test</h1>
+                <img src ={post.mediaUrl} alt ={'A Plant'} className="h-auto" />
+            </div>
+            <div className="p-2">
+                {post.price !== null ? (
+                <button className="bg-green-400 rounded-lg w-3/8">
+                    <a href={post.permalink} target="_blank" rel="noopener noreferrer" className="text-xs p-2 text-white font-extrabold">${post.price} SGD</a>
+                </button>
+                ) : (
+                <button className="bg-red-400 rounded-lg w-3/8">
+                    <a href={post.permalink} target="_blank" rel="noopener noreferrer" className="text-xs p-2 text-white font-extrabold">sold!</a>
+                </button>   
+                )}             
+            </div>
+            <div className="text-xs">
+                <p>{post.waterFrequency}</p>
+                <p>{post.sunRating}</p>                
+                <p>{post.waterGuide}</p>
+                <p>{post.sunGuide}</p>
+                <p>{post.igDescription}</p>                
             </div>
         </div>
     );

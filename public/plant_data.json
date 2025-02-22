@@ -9,14 +9,14 @@
     {
         "name": "Stephania Erecta",
         "water_frequency": 1,
-        "water_requirement_description": "Water sparingly, letting the soil dry out—its caudex stores moisture.",
+        "water_requirement_description": "Water once a week—its caudex stores water, making it drought-tolerant.",
         "sunlight_requirement_rating": 3,
         "sunlight_requirement_description": "Loves bright, indirect light—keep near a window but avoid harsh sun."
     },
     {
         "name": "Orange Succulent",
         "water_frequency": 0.5,
-        "water_requirement_description": "Water only when the soil is bone dry—its plump leaves store moisture.",
+        "water_requirement_description": "Water once every two weeks-its plump leaves store moisture, so water only when the soil is bone dry.",
         "sunlight_requirement_rating": 5,
         "sunlight_requirement_description": "Thrives in bright, direct light—keep it by a sunny window but watch for sunburn."
     },
@@ -44,14 +44,14 @@
     {
         "name": "Senna Meridionalis",
         "water_frequency": 2,
-        "water_requirement_description": "Water 2 times a week—since it's a desert plant, it stores moisture and thrives with less frequent watering.",
+        "water_requirement_description": "Water 2 times a week-since it's a desert plant, it stores moisture and thrives with less frequent watering.",
         "sunlight_requirement_rating": 5,
         "sunlight_requirement_description": "Thrives in bright, direct light—place in a sunny spot for optimal growth and flowering."
     },
     {
         "name": "Stephania Suberosa",
         "water_frequency": 1,
-        "water_requirement_description": "Water once a week—its caudex stores water, making it drought-tolerant.",
+        "water_requirement_description": "Water once a week-its caudex stores water, making it drought-tolerant.",
         "sunlight_requirement_rating": 3,
         "sunlight_requirement_description": "Thrives in bright, indirect light—keep near a window but away from intense sun to prevent stress."
     },
@@ -65,7 +65,7 @@
     {
         "name": "Clover",
         "water_frequency": 3,
-        "water_requirement_description": "Water 3 times a week, clover enjoys consistently moist soil but can tolerate short dry periods.",
+        "water_requirement_description": "Water 3 times a week-clover enjoys consistently moist soil but can tolerate short dry periods.",
         "sunlight_requirement_rating": 4,
         "sunlight_requirement_description": "Thrives in bright, filtered light—does well with some morning sun but prefers shade during the hottest part of the day."
     }
