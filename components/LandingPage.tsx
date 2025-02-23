@@ -3,8 +3,8 @@ import '../styles/global.css';
 
 export default function LandingPage() {
   return (
-    <div className="w-full bg-[url('/images/land.png')] min-h-screen bg-center bg-cover"> 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-90% to-white"></div>
+    <div className="w-full bg-[url('/images/bonsaiCover2.png')] min-h-screen bg-center bg-cover"> 
+      <div className="absolute inset-0"></div>
       <nav className="flex items-center">
             <img className ="w-32 h-32 "src = "/images/whiteimage.png"></img>
             <ul className="flex-auto text-center">

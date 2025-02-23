@@ -7,7 +7,9 @@ export default function Home() {
   return (
     <>
       <LandingPage />
+      {/* about me */}
       <InstagramFeed />
+      {/* more to come... contact me! */}
     </>
   );
 }
