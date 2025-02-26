@@ -3,14 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import { InstagramPost } from '../models/InstagramPost';
 import { InstagramService } from '../models/InstagramService';
-import Modal from './Modal';
-import PlantModal from './PlantModal';
+import { useRouter } from "next/navigation";
 
 const InstagramFeed: React.FC = () => {
   const [posts, setPosts] = useState<InstagramPost[]>([]);
+  const router = useRouter();
   const instagramService = new InstagramService();
-  const [selectedPost, setSelectedPost] = useState<InstagramPost | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -27,13 +26,7 @@ const InstagramFeed: React.FC = () => {
   }, []);
 
   const handleImageClick = (post: InstagramPost) => {
-    setSelectedPost(post);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedPost(null);
+    router.push(`/plant/${post.id}`);
   };
 
   return (
@@ -43,24 +36,16 @@ const InstagramFeed: React.FC = () => {
       ) : (
         posts.map((post) => (
           <div key={post.id} className="border rounded-lg shadow-md overflow-hidden">
-            <a
-              onClick={() => handleImageClick(post)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:scale-105 transition-transform duration-300 block"
-            >
+            <button onClick={() => handleImageClick(post)} className="hover:scale-105 transition-transform duration-300 block w-full">
               <img
                 src={post.mediaUrl}
-                alt={post.caption || 'Instagram Post'}
-                className={`w-full h-auto ${post.isSold() ? 'opacity-50' : ''}`}
+                alt={post.caption || "Instagram Post"}
+                className={`w-full h-auto ${post.isSold() ? "opacity-50" : ""}`}
               />
-            </a>
+            </button>
           </div>
         ))
       )}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        {selectedPost && <PlantModal post={selectedPost} />}
-      </Modal>
     </div>
   );
 };
