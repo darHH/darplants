@@ -24,7 +24,7 @@ export default function LandingPage() {
                   </a>
                 </li>            
             </ul>  
-            <img className="mr-16 w-8 h-8 md:w-12 md:h-12 lg:w-16 lg:h-16" src="/images/robot.png"></img>
+            <img className="mr-16 w-10 h-10 md:w-16 md:h-16 lg:w-16 lg:h-16" src="/images/robot.png"></img>
         </nav> 
     </div>
   );

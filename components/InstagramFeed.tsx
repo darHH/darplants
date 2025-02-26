@@ -37,7 +37,7 @@ const InstagramFeed: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-8 md:py-24 md:px-48">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 p-8 md:py-24 md:px-32 lg:px-48">
       {posts.length === 0 ? (
         <p className="text-center text-gray-500">No posts found.</p>
       ) : (
