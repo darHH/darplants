@@ -3,25 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #F5F5F5;
   --foreground: #171717;
+  --font-nunito: 'Nunito', sans-serif;
+  --font-pt-sans: 'PT Sans', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --font-nunito: 'Nunito', sans-serif;
-    --font-pt-sans: 'PT Sans', sans-serif;
   }
 }
 
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
   font-family: var(--font-pt-sans);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-nunito);
 }
+
+p {
+  font-family: var(--font-pt-sans);
+}
+
