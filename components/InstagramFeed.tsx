@@ -30,22 +30,27 @@ const InstagramFeed: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 p-8 md:py-24 md:px-32 lg:px-48">
-      {posts.length === 0 ? (
-        <p className="text-center text-gray-500">No posts found.</p>
-      ) : (
-        posts.map((post) => (
-          <div key={post.id} className="border rounded-lg shadow-md overflow-hidden">
-            <button onClick={() => handleImageClick(post)} className="hover:scale-105 transition-transform duration-300 block w-full">
-              <img
-                src={post.mediaUrl}
-                alt={post.caption || "Instagram Post"}
-                className={`w-full h-auto ${post.isSold() ? "opacity-50" : ""}`}
-              />
-            </button>
-          </div>
-        ))
-      )}
+    <div>
+      <div className="h-[80vh] overflow-y-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 py-4 px-8 md:py-2 md:px-32 lg:px-48">
+          {posts.length === 0 ? (
+            <p className="text-center text-gray-500">No posts found.</p>
+          ) : (
+            posts.map((post) => (
+              <div key={post.id} className="border rounded-lg shadow-md overflow-hidden">
+                <button onClick={() => handleImageClick(post)} className="hover:scale-105 transition-transform duration-300 block w-full">
+                  <img
+                    src={post.mediaUrl}
+                    alt={post.caption || "Instagram Post"}
+                    className={`w-full h-auto ${post.isSold() ? "opacity-50" : ""}`}
+                  />
+                </button>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+      <hr className="border-t border-gray-300 my-4 lg:mx-24 md:mx-16 mx-8"></hr>
     </div>
   );
 };
