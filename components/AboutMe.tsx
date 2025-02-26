@@ -4,7 +4,7 @@ import '../styles/global.css';
 export default function AboutMe() {
     return (
         <div className="container min-h-full bg-[#F5F5F5] relative">
-            <div className="px-48 py-28 max-w-5xl sm:px-28">
+            <div className="lg:p-28 md:p-16 p-8 max-w-5xl">
                 <h1 className="text-[#202A25] lg:text-6xl text-4xl font-semibold mb-6">
                     Dar's Houseplants
                 </h1>
@@ -16,7 +16,7 @@ export default function AboutMe() {
                 </p>
             </div>
             <img></img>
-            <hr className="border-t border-gray-300 my-4 mx-48"></hr>
+            <hr className="border-t border-gray-300 my-4 lg:mx-24 md:mx-16 mx-8"></hr>
         </div>
 
     );
