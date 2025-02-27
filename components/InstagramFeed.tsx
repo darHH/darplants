@@ -73,7 +73,6 @@ const InstagramFeed: React.FC = () => {
           className="border text-sm rounded-md px-2 py-1 text-[#202A25] appearance-none"
         >
           <option value="default">Date</option>
-          <option value="price">Price</option>
           <option value="availability">Availability</option>
         </select>
       </div>
