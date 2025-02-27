@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito, PT_Sans } from "next/font/google";
 import "../styles/global.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${nunito.variable} ${ptSans.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
