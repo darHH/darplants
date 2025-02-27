@@ -20,20 +20,24 @@ const PlantDetails: React.FC = () => {
   useEffect(() => {
     const fetchPlant = async () => {
       try {
-        const response = await fetch('/api/instagram');
-        const fetchedPosts: InstagramPostData[] = await response.json(); // Use the type here
+        const response = await fetch("/api/instagram");
+        const fetchedPosts: InstagramPostData[] = await response.json();
         
+        console.log("Fetched posts:", fetchedPosts);  // Log to see if the data is fetched
+  
         const instagramPosts = fetchedPosts.map((post: InstagramPostData) => new InstagramPost(
           post.id,
           post.mediaUrl,
           post.caption,
           post.permalink
         ));
-
-        const foundPlant: InstagramPost | undefined = instagramPosts.find(
-          (post: InstagramPost) => post.id === id || post.id === String(id)
+  
+        const foundPlant = instagramPosts.find(
+          (post) => post.id === id || post.id === String(id)
         );
+  
         if (foundPlant) {
+          console.log("Found plant:", foundPlant);  // Log to verify that the correct plant is found
           setPlant(foundPlant);
         }
       } catch (error) {
@@ -42,7 +46,7 @@ const PlantDetails: React.FC = () => {
     };
   
     fetchPlant();
-  }, [id]);
+  }, [id]); // Ensure that the effect runs when 'id' changes
 
   if (!plant) {
     return <p className="text-center text-gray-500">Loading plant details...</p>;
