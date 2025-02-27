@@ -15,15 +15,19 @@ export class InstagramService {
                     fields: 'id,media_url,caption,permalink',
                     access_token: this.accessToken,
                 },
-        });
+            });
+    
+            // Filter out non-image posts and remove the last post (notebook)
+            let posts = response.data.data
+                .filter((post: any) => post.media_url.includes('jpg'))
+                .map((post: any) => new InstagramPost(post.id, post.media_url, post.caption, post.permalink));
+    
+            // Fetch additional plant data for each post
+            for (let post of posts) {
+                await post.getPlantData();
+            }
 
-      // Filter out non-image posts and remove the last post (notebook)
-      const posts = response.data.data
-        .filter((post: any) => post.media_url.includes('jpg'))
-        .map((post: any) => new InstagramPost(post.id, post.media_url, post.caption, post.permalink));
-
-      // Remove the last post
-      return posts.slice(0, -1);
+            return posts.slice(0, -1);
         } catch (error) {
             console.error('Failed to fetch Plants from Instagram Feed', error);
             return [];

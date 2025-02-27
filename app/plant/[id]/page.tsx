@@ -12,12 +12,12 @@ const PlantDetails: React.FC = () => {
   const instagramService = new InstagramService();
 
   useEffect(() => {
-    let isMounted = true; // Prevent state update on unmounted component
     const fetchPlant = async () => {
       try {
+        console.log("Fetching plant data...");
         const fetchedPosts = await instagramService.fetchPosts();
         const foundPlant = fetchedPosts.find((post) => post.id === id);
-        if (foundPlant && isMounted) {
+        if (foundPlant) {
           setPlant(foundPlant);
         }
       } catch (error) {
@@ -26,10 +26,6 @@ const PlantDetails: React.FC = () => {
     };
   
     fetchPlant();
-  
-    return () => {
-      isMounted = false; // Cleanup function
-    };
   }, [id]);
 
   if (!plant) {
@@ -62,7 +58,7 @@ const PlantDetails: React.FC = () => {
         {/* Care and Purchase container */}    
         <div className="mt-6">
 
-          <h3 className="text-lg font-semibold">Care Instructions</h3>
+        <h3 className="text-lg font-semibold">Care Instructions</h3>
         {/* Water Requirements */}
         <div className="mt-2">
           <p className="flex gap-2">
@@ -109,13 +105,11 @@ const PlantDetails: React.FC = () => {
               <p className="text-[#465D52] text-sm italic">{plant.sunGuide}</p>
           </div>
 
-
-
           <div className="flex justify-between mt-6 gap-4">
             {/* Back Button */}
             <button
               onClick={() => router.back()}
-              className="w-1/2 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition">
+              className="w-1/2 font-bold px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition">
               Back to Plants
             </button>
             {/* Buy on Instagram Button */}
