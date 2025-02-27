@@ -11,6 +11,7 @@ const LogoPage: React.FC = () => {
       <img 
       className="m-12 w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 drop-shadow-lg hover:scale-110" 
       src="/images/oglogobig.png"
+      alt="darplants logo"
       onClick={() => setIsOpen(true)}
       />
 

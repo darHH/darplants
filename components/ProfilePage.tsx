@@ -27,7 +27,7 @@ const ProfilePage: React.FC = () => {
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
           >
             <h2 className="text-lg font-bold text-[#202A25]">
-                I'm working on it!
+                I&apos;m working on it!
             </h2>
             <p className="text-[#465D52] mt-1 text-xs">
                 Oh, you found me! Dar is busy sprouting new and exciting features for this website — stay tuned

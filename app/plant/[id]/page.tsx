@@ -79,6 +79,7 @@ const PlantDetails: React.FC = () => {
                   <img
                     key={i}
                     src={imgSrc}
+                    alt="water"
                     style={{ width: "18px", margin: "0px" }}
                   />
                 );
@@ -97,6 +98,7 @@ const PlantDetails: React.FC = () => {
                 <img
                   key={i}
                   src={i < plant.sunRating ? "/images/fullsunblack.png" : "/images/emptysunblack.png"}
+                  alt= "Sun"
                   style={{ width: "20px", margin: "0px" }}
                 />
               ))}
