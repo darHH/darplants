@@ -33,8 +33,8 @@ const PlantDetails: React.FC = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="relative w-full overflow-hidden shadow-lg">
+    <div className="max-w-3xl mx-auto md:pt-12 md:w-1/2 lg:w-1/3">
+      <div className="relative w-full overflow-hidden shadow-lg md:rounded-lg md:w-3/4 lg:w-full mx-auto">
         <img
           src={plant.mediaUrl}
           alt={plant.plantName}

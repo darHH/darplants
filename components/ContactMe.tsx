@@ -43,7 +43,7 @@ const ContactMe: React.FC = () => {
         {/* Section Title */}
         <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
         <p className="text-[#465D52]">
-          For anything at all, I'll be happy to chat!
+          For anything at all, I'll always be happy to chat!
         </p>
 
         {/* Contact Form */}
