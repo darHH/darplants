@@ -2,29 +2,50 @@
 
 import React, { useEffect, useState } from 'react';
 import { InstagramPost } from '../models/InstagramPost';
-import { InstagramService } from '../models/InstagramService';
 import { useRouter } from "next/navigation";
+
+interface InstagramPostData {
+  id: string;
+  mediaUrl: string;
+  caption: string;
+  permalink: string;
+}
 
 const InstagramFeed: React.FC = () => {
   const [posts, setPosts] = useState<InstagramPost[]>([]);
-  const [sortBy, setSortBy] = useState<string>('Date'); 
+  const [sortBy, setSortBy] = useState<string>('Date');
   const router = useRouter();
-  const instagramService = new InstagramService();
 
+  // Function to handle the fetching and transformation of posts data
+  const loadPosts = async () => {
+    try {
+      const response = await fetch('/api/instagram');
+      const fetchedPosts: InstagramPostData[] = await response.json(); 
+      
+      // Convert raw post data to InstagramPost objects
+      const instagramPosts = await Promise.all(
+        fetchedPosts.map(async (post: InstagramPostData) => {
+          const instagramPost = new InstagramPost(
+            post.id,
+            post.mediaUrl,
+            post.caption,
+            post.permalink
+          );
+          // Fetch additional plant data
+          await instagramPost.getPlantData();
+          return instagramPost;
+        })
+      );
+
+      setPosts(instagramPosts);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  };
 
   useEffect(() => {
-    const loadPosts = async () => {
-      try {
-        const fetchedPosts = await instagramService.fetchPosts();
-        console.log(fetchedPosts);       
-        setPosts(fetchedPosts);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-      }
-    };
-
     loadPosts();
-  }, [instagramService]);
+  }, []);
 
   const sortedPosts = [...posts].sort((a, b) => {
     if (sortBy === 'price') {

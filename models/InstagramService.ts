@@ -5,7 +5,7 @@ export class InstagramService {
     private accessToken: string | undefined;
 
     constructor() {
-        this.accessToken = process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN;
+        this.accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
     }
 
     async fetchPosts(): Promise<InstagramPost[]> {
@@ -16,20 +16,22 @@ export class InstagramService {
                     access_token: this.accessToken,
                 },
             });
-    
-            // Filter out non-image posts and remove the last post (notebook)
-            let posts = response.data.data
+
+            let posts: InstagramPost[] = response.data.data
                 .filter((post: any) => post.media_url.includes('jpg'))
                 .map((post: any) => new InstagramPost(post.id, post.media_url, post.caption, post.permalink));
-    
-            // Fetch additional plant data for each post
-            for (let post of posts) {
-                await post.getPlantData();
-            }
 
-            return posts.slice(0, -1);
+            await Promise.all(posts.map(async (post: InstagramPost) => {
+                try {
+                    await post.getPlantData();
+                } catch (error) {
+                    console.error(`Error fetching plant data for post ${post.id}`, error);
+                }
+            }));
+
+            return posts.slice(0, -1); // Remove the last post
         } catch (error) {
-            console.error('Failed to fetch Plants from Instagram Feed', error);
+            console.error('Failed to fetch posts from Instagram', error);
             return [];
         }
     }

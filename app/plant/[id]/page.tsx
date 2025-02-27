@@ -2,21 +2,37 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { InstagramService } from "../../../models/InstagramService";
 import { InstagramPost } from "../../../models/InstagramPost";
+
+
+interface InstagramPostData {
+  id: string;
+  mediaUrl: string;
+  caption: string;
+  permalink: string;
+}
 
 const PlantDetails: React.FC = () => {
   const { id } = useParams(); 
   const router = useRouter();
   const [plant, setPlant] = useState<InstagramPost | null>(null);
-  const instagramService = new InstagramService();
 
   useEffect(() => {
     const fetchPlant = async () => {
       try {
-        console.log("Fetching plant data...");
-        const fetchedPosts = await instagramService.fetchPosts();
-        const foundPlant = fetchedPosts.find((post) => post.id === id);
+        const response = await fetch('/api/instagram');
+        const fetchedPosts: InstagramPostData[] = await response.json(); // Use the type here
+        
+        const instagramPosts = fetchedPosts.map((post: InstagramPostData) => new InstagramPost(
+          post.id,
+          post.mediaUrl,
+          post.caption,
+          post.permalink
+        ));
+
+        const foundPlant: InstagramPost | undefined = instagramPosts.find(
+          (post: InstagramPost) => post.id === id || post.id === String(id)
+        );
         if (foundPlant) {
           setPlant(foundPlant);
         }
