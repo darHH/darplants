@@ -24,7 +24,7 @@ const InstagramFeed: React.FC = () => {
     };
 
     loadPosts();
-  }, []);
+  }, [instagramService]);
 
   const sortedPosts = [...posts].sort((a, b) => {
     if (sortBy === 'price') {
