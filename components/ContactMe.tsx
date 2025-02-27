@@ -71,7 +71,7 @@ const ContactMe: React.FC = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-[#2BF36E] hover:bg-[#0BC148] text-[#F5F5F5] font-bold py-2 px-6 rounded-lg transition"
+            className="bg-[#7F9F8F] hover:bg-[#465D52] text-[#F5F5F5] font-bold py-1 px-6 rounded-lg transition"
           >
             send
           </button>
