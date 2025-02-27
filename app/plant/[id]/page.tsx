@@ -119,7 +119,7 @@ const PlantDetails: React.FC = () => {
               rel="noopener noreferrer"
               className="w-1/2 text-center px-4 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition"
               >
-              Buy on Instagram
+              View on Instagram
             </a>
           </div>    
         </div>
