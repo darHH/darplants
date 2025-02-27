@@ -23,7 +23,6 @@ export class InstagramPost {
       this.plantName = this.fullName.split(' in ')[0]; // Name of the plant
       this.price = this.getPrice(); // Price of the plant in SGD
       this.igDescription = this.getIgDescription(); // IG's description of the plant
-      this.getPlantData(); // Water Frequency, Water Guide, Sun Rating, Sun Guide
     }
   
     getLastLine(): string {

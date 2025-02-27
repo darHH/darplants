@@ -16,42 +16,44 @@ const PlantDetails: React.FC = () => {
   const { id } = useParams(); 
   const router = useRouter();
   const [plant, setPlant] = useState<InstagramPost | null>(null);
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchPlant = async () => {
       try {
         const response = await fetch("/api/instagram");
         const fetchedPosts: InstagramPostData[] = await response.json();
-        
-        console.log("Fetched posts:", fetchedPosts);  // Log to see if the data is fetched
-  
-        const instagramPosts = fetchedPosts.map((post: InstagramPostData) => new InstagramPost(
-          post.id,
-          post.mediaUrl,
-          post.caption,
-          post.permalink
-        ));
-  
+
+        const instagramPosts = fetchedPosts.map(
+          (post: InstagramPostData) =>
+            new InstagramPost(post.id, post.mediaUrl, post.caption, post.permalink)
+        );
+
         const foundPlant = instagramPosts.find(
           (post) => post.id === id || post.id === String(id)
         );
-  
+
         if (foundPlant) {
-          console.log("Found plant:", foundPlant);  // Log to verify that the correct plant is found
+          await foundPlant.getPlantData();
           setPlant(foundPlant);
+          setLoading(false);  // Set loading to false after the data is populated
         }
       } catch (error) {
         console.error("Error fetching plant data:", error);
+        setLoading(false);  // Set loading to false if there's an error
       }
     };
-  
+
     fetchPlant();
-  }, [id]); // Ensure that the effect runs when 'id' changes
+  }, [id]);
 
   if (!plant) {
-    return <p className="text-center text-gray-500">Loading plant details...</p>;
+    return <p className="text-center pt-8 text-gray-500">Loading plant details...</p>;
   }
 
+  console.log('Water Frequency BEFORE:', plant.waterFrequency);
+  console.log('Sun Rating BEFORE:', plant.sunRating);
   return (
     <div className="max-w-3xl mx-auto md:pt-12 md:w-1/2 lg:w-1/3">
       <div className="relative w-full overflow-hidden shadow-lg md:rounded-lg md:w-3/4 lg:w-full mx-auto">
