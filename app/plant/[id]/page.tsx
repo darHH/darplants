@@ -16,8 +16,6 @@ const PlantDetails: React.FC = () => {
   const { id } = useParams(); 
   const router = useRouter();
   const [plant, setPlant] = useState<InstagramPost | null>(null);
-  const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
     const fetchPlant = async () => {
@@ -37,11 +35,9 @@ const PlantDetails: React.FC = () => {
         if (foundPlant) {
           await foundPlant.getPlantData();
           setPlant(foundPlant);
-          setLoading(false);  // Set loading to false after the data is populated
         }
       } catch (error) {
         console.error("Error fetching plant data:", error);
-        setLoading(false);  // Set loading to false if there's an error
       }
     };
 
