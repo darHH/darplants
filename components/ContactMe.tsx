@@ -38,12 +38,12 @@ const ContactMe: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white py-12 px-6 md:px-12">
+    <div className=" text-[#202A25] py-12 px-6 md:px-12">
       <div className="max-w-3xl mx-auto text-center">
         {/* Section Title */}
         <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
-        <p className="text-gray-400">
-          Have questions about my plants? Want to adopt one? Send me a message!
+        <p className="text-[#465D52]">
+          For anything at all, I'll be happy to chat!
         </p>
 
         {/* Contact Form */}
@@ -54,7 +54,7 @@ const ContactMe: React.FC = () => {
             placeholder="Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full max-w-md p-3 rounded-md border border-gray-700 bg-gray-800 text-white outline-none focus:border-green-400 mb-4"
+            className="w-full max-w-md p-3 rounded-md border border-[#65F695] bg-[#9FF9BD] text-black outline-none focus:border-[#0BC148] mb-4"
             required
           />
 
@@ -63,7 +63,7 @@ const ContactMe: React.FC = () => {
             placeholder="Your Message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full max-w-md p-3 rounded-md border border-gray-700 bg-gray-800 text-white outline-none focus:border-green-400 mb-4"
+            className="w-full max-w-md p-3 rounded-md border border-[#65F695] bg-[#9FF9BD] text-black outline-none focus:border-[#0BC148] mb-4"
             rows={4}
             required
           ></textarea>
@@ -71,9 +71,9 @@ const ContactMe: React.FC = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg transition"
+            className="bg-[#2BF36E] hover:bg-[#0BC148] text-[#F5F5F5] font-bold py-2 px-6 rounded-lg transition"
           >
-            Send Message
+            send
           </button>
 
           {/* Status Message */}
@@ -81,14 +81,18 @@ const ContactMe: React.FC = () => {
         </form>
 
         {/* Social Media Links */}
-        <div className="mt-8 flex justify-center gap-6">
-          <a
-            href="https://instagram.com/darplants_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-pink-500 text-2xl transition"
-          >
+        <div className="mt-8 flex justify-center items-center gap-2">
+            <p>
+                or find me at
+            </p>
+            <a
+                href="https://instagram.com/darplants_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className= "text-pink-400 hover:text-pink-600 text-xl transition flex justify-center items-center gap-1"
+            > 
             <FaInstagram />
+            darplants_
           </a>
         </div>
       </div>
