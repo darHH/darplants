@@ -112,7 +112,7 @@ const PlantDetails: React.FC = () => {
             <p className="flex gap-2">
               <span className="font-semibold">Sunlight Requirement:</span>
               <span style={{ display: "flex", gap: "0px", alignItems: "center" }}>
-              {Array.from({ length: 7 }).map((_, i) => (
+              {Array.from({ length: 5 }).map((_, i) => (
                 <img
                   key={i}
                   src={i < plant.sunRating ? "/images/fullsunblack.png" : "/images/emptysunblack.png"}

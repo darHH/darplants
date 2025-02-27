@@ -48,15 +48,10 @@ const InstagramFeed: React.FC = () => {
   }, []);
 
   const sortedPosts = [...posts].sort((a, b) => {
-    if (sortBy === 'price') {
-      if (a.price == null && b.price == null) return 0; 
-      if (a.price == null) return 1;
-      if (b.price == null) return -1;
-      return a.price - b.price;
-    } else if (sortBy === 'availability') {
+    if (sortBy === 'availability') {
       return a.isSold() === b.isSold() ? 0 : a.isSold() ? 1 : -1;
     }
-    return 0; // Default (no sorting, keep Instagram's API order)
+    return 0; // Default date
   });
 
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
