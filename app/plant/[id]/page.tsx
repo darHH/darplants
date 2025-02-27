@@ -12,21 +12,24 @@ const PlantDetails: React.FC = () => {
   const instagramService = new InstagramService();
 
   useEffect(() => {
+    let isMounted = true; // Prevent state update on unmounted component
     const fetchPlant = async () => {
       try {
         const fetchedPosts = await instagramService.fetchPosts();
         const foundPlant = fetchedPosts.find((post) => post.id === id);
-        if (foundPlant) {
+        if (foundPlant && isMounted) {
           setPlant(foundPlant);
-        } else {
-          console.error("Plant not found");
         }
       } catch (error) {
         console.error("Error fetching plant data:", error);
       }
     };
-
+  
     fetchPlant();
+  
+    return () => {
+      isMounted = false; // Cleanup function
+    };
   }, [id]);
 
   if (!plant) {
@@ -60,22 +63,34 @@ const PlantDetails: React.FC = () => {
         <div className="mt-6">
 
           <h3 className="text-lg font-semibold">Care Instructions</h3>
-          {/* Water Requirements */}
-          <div className="mt-2">
-            <p className="flex gap-2">
-              <span className="font-semibold">Water Frequency (per week):</span>
-              <span style={{ display: "flex", gap: "0px", alignItems: "center" }}>
-              {Array.from({ length: 7 }).map((_, i) => (
-                <img
-                  key={i}
-                  src={i < plant.waterFrequency ? "../images/fullwaterblack.png" : "../images/emptywaterblack.png"}
-                  style={{ width: "18px", margin: "0px" }}
-                />
-              ))}
-              </span>
-              </p>
-              <p className="text-[#465D52] text-sm italic">{plant.waterGuide}</p>
-          </div>
+        {/* Water Requirements */}
+        <div className="mt-2">
+          <p className="flex gap-2">
+            <span className="font-semibold">Water Frequency (per week):</span>
+            <span style={{ display: "flex", gap: "0px", alignItems: "center" }}>
+              {Array.from({ length: 7 }).map((_, i) => {
+                const fullDrops = Math.floor(plant.waterFrequency ?? 0); 
+                const hasHalfDrop = (plant.waterFrequency ?? 0) % 1 !== 0; 
+
+                let imgSrc = "/images/emptywaterblack.png"; 
+
+                if (i < fullDrops) {
+                  imgSrc = "/images/fullwaterblack.png"; 
+                } else if (i === fullDrops && hasHalfDrop) {
+                  imgSrc = "/images/halfwaterblack.png"; 
+                }
+                return (
+                  <img
+                    key={i}
+                    src={imgSrc}
+                    style={{ width: "18px", margin: "0px" }}
+                  />
+                );
+              })}
+            </span>
+          </p>
+          <p className="text-[#465D52] text-sm italic">{plant.waterGuide}</p>
+        </div>
 
           {/* Sun Requirement */}
           <div className="mt-2">
@@ -85,7 +100,7 @@ const PlantDetails: React.FC = () => {
               {Array.from({ length: 7 }).map((_, i) => (
                 <img
                   key={i}
-                  src={i < plant.waterFrequency ? "../images/fullsunblack.png" : "../images/emptysunblack.png"}
+                  src={i < plant.sunRating ? "/images/fullsunblack.png" : "/images/emptysunblack.png"}
                   style={{ width: "20px", margin: "0px" }}
                 />
               ))}
