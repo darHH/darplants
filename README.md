@@ -1,20 +1,17 @@
 ## About
 
 *what's this?*
----
 This is [darplants' website](www.darhh.com/) created by myself, [darhh](https://github.com/darHH)! I decided to built a website for my small plant business on Instagram. It was a great experience learning new frameworks, problem-solving, and designing and styling the website! 
 
 ## Languages
 
 *Languages I used*
----
 1. Typescript 
 2. Javascript (just a hint of)
 
 ## Frameworks
 
 *Frameworks I learnt and used*
----
 1. Next.js
 2. TailwindCSS
 3. React
@@ -22,7 +19,6 @@ This is [darplants' website](www.darhh.com/) created by myself, [darhh](https://
 ## APIs
 
 *APIs I used*
----
 1. Instagram's graph API 
 > Acted as my ‘database,’ where I fetch my plants. Since I was already operating on Instagram and planned to continue doing so, it streamlined the process of releasing plants, as I only had to upload to Instagram.
 2. (attempted) genai and gemini API
@@ -31,7 +27,6 @@ This is [darplants' website](www.darhh.com/) created by myself, [darhh](https://
 ## Useful links 
 
 *Useful resourced I used that helped the development process*
----
 1. [coolers.co](https://coolors.co/) 
 > Helped me find matching/contrasting colors for the website, keep track of my color palette, and shades of a particular color.
 2. [fontpair.co](https://www.fontpair.co/)
