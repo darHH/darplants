@@ -5,13 +5,13 @@ This is [darplants' website](www.darhh.com/) created by me, [darhh](https://gith
 Built a website for my small plant business on Instagram. It was a great experience learning new frameworks, problem-solving, and designing and styling the website! 
 
 ## Language 
-*Language I used*
+_Language I used_
 ---
 1. Typescript 
 2. Javascript (just a hint of)
 
-## Frameworks 
-*Frameworks I learnt and used*
+## Frameworks ##
+_Frameworks I learnt and used_
 ---
 1. Next.js
 2. TailwindCSS
