@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is [darplants' website](www.darhh.com/) created by me, [darhh](https://github.com/darHH)!
 
-## Getting Started
+## About
+---
+Built a website for my small plant business on Instagram. It was a great experience learning new frameworks, problem-solving, and designing and styling the website! 
 
-First, run the development server:
+## Language 
+*Language I used*
+---
+1. Typescript 
+2. Javascript (just a hint of)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Frameworks 
+*Frameworks I learnt and used*
+---
+1. Next.js
+2. TailwindCSS
+3. React
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## APIs
+*APIs I used*
+---
+1. Instagram's graph API 
+> Acted as my ‘database,’ where I fetch my plants. Since I was already operating on Instagram and planned to continue doing so, it streamlined the process of releasing plants, as I only had to upload to Instagram.
+2. (attempted) genai and gemini API
+> Tried to automate plant care guides and descriptions by querying GenAI/Gemini. It worked, but I removed it as both models required payment to continue, and it didn’t make sense to pay for queries each time the page loaded.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Useful links 
+*Useful resourced I used that helped the development process*
+---
+1. [coolers.co](https://coolors.co/) 
+> Helped me find matching/contrasting colors for the website, keep track of my color palette, and shades of a particular color.
+2. [fontpair.co](https://www.fontpair.co/)
+> Helped me find nice fonts that suit the theme of the website.
+3. [tailwindcss documentation](https://v2.tailwindcss.com/)
+> To learn styling with tailwindcss as it was new to me.
+4. [html and css documentation](https://devdocs.io/html/)
+> To refer to some HTML syntax.
+5. [react documentation](https://react.dev/)
+> To recap React syntax, used the least.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Programs 
+1. Cloudfare
+> For domain name and security when hosting website.
+2. Vercel 
+> Next.js' free hosting service (thank you!).
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Others 
+Overall, I learned a lot and have future plans to continue learning and building new things for the website. Stay tuned!
