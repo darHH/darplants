@@ -25,9 +25,9 @@ This is [darplants' website](www.darhh.com/) created by myself, [darhh](https://
 2. (attempted) genai and gemini API
 > Tried to automate plant care guides and descriptions by querying GenAI/Gemini for each respective plant. It worked, but I removed it as both models required payment to continue. It also didn’t make sense to pay for queries each time the page loaded.
 
-## Useful links 
+## Useful pages / links 
 
-*Useful resourced I used that helped the development process*
+*Useful resources I used that helped the development process*
 1. [coolers.co](https://coolors.co/) 
 > Helped me find matching/contrasting colors for the website, keep track of my color palette, and shades of a particular color.
 2. [fontpair.co](https://www.fontpair.co/)
