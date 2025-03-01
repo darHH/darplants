@@ -1,6 +1,7 @@
 ## About
 
 *what's this?*
+
 This is [darplants' website](www.darhh.com/) created by myself, [darhh](https://github.com/darHH)! I decided to built a website for my small plant business on Instagram. It was a great experience learning new frameworks, problem-solving, and designing and styling the website! 
 
 ## Languages
