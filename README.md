@@ -23,7 +23,7 @@ This is [darplants' website](www.darhh.com/) created by myself, [darhh](https://
 1. Instagram's graph API 
 > Acted as my ‘database,’ where I fetch my plants. Since I was already operating on Instagram and planned to continue doing so, it streamlined the process of releasing plants, as I only had to upload to Instagram.
 2. (attempted) genai and gemini API
-> Tried to automate plant care guides and descriptions by querying GenAI/Gemini. It worked, but I removed it as both models required payment to continue, and it didn’t make sense to pay for queries each time the page loaded.
+> Tried to automate plant care guides and descriptions by querying GenAI/Gemini for each respective plant. It worked, but I removed it as both models required payment to continue. It also didn’t make sense to pay for queries each time the page loaded.
 
 ## Useful links 
 
