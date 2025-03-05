@@ -54,7 +54,7 @@ const ContactMe: React.FC = () => {
             placeholder="Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full max-w-md p-3 rounded-md border border-[#65F695] bg-[#9FF9BD] text-black outline-none focus:border-[#0BC148] mb-4"
+            className="w-full max-w-md p-3 rounded-md border border-[#65F695] bg-[#9FF9BD] text-black outline-hidden focus:border-[#0BC148] mb-4"
             required
           />
 
@@ -63,7 +63,7 @@ const ContactMe: React.FC = () => {
             placeholder="Your Message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full max-w-md p-3 rounded-md border border-[#65F695] bg-[#9FF9BD] text-black outline-none focus:border-[#0BC148] mb-4"
+            className="w-full max-w-md p-3 rounded-md border border-[#65F695] bg-[#9FF9BD] text-black outline-hidden focus:border-[#0BC148] mb-4"
             rows={4}
             required
           ></textarea>
