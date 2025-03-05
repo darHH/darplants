@@ -1,3 +1,5 @@
+import plant_data from "./plant_data.json"
+
 // src/models/InstagramPost.ts
 export class InstagramPost {
     id: string;
@@ -58,11 +60,7 @@ export class InstagramPost {
 
     async getPlantData(): Promise<void> {
       try {
-        // Fetch JSON from public folder
-        const response = await fetch("/plant_data.json");
-        if (!response.ok) throw new Error("Failed to load plant data.");
-    
-        const plantData = await response.json();
+        const plantData = plant_data
     
         // Find the plant
         const plant = plantData.find((p: any) => p.name.toLowerCase() === this.plantName.toLowerCase().trimEnd());
